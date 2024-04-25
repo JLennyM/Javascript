@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="calculator.css">
+            <title>Calculator</title>
+        </head>
+<body>
+<h1>My Calculator</h1>
+<div class="calculator">
+<input type="text" id="result" class="input" readonly/>
+<div class="calculator__keys">
+    <button class="calculator__key--operator" onclick="Result('+')">+</button>
+    <button class="calculator__key--operator" onclick="Result('-')" >-</button>
+    <button class="calculator__key--operator" onclick="Result('/')">/</button>
+    <button class="calculator__key--operator" onclick="Result('*')">*</button>
+  <button class="calculator__key" value="7"  onclick="Result('7')">7</button>
+  <button class="calculator__key"   onclick="Result('8')">8</button>
+  <button class="calculator__key"   onclick="Result('9')">9</button>
+  <button class="calculator__key"   onclick="Result('4')">4</button>
+  <button class="calculator__key"   onclick="Result('5')">5</button>
+  <button class="calculator__key"   onclick="Result('6')">6</button>
+  <button class="calculator__key"   onclick="Result('1')">1</button>
+  <button class="calculator__key"   onclick="Result('2')">2</button>
+  <button class="calculator__key"   onclick="Result('3')">3</button>
+  <button class="calculator__key"   onclick="Result('0')">0</button>
+  <button class="calculator__key"   onclick="Result('.')">.</button>
+  <button class="calculator__key"   onclick="clearResult()" >AC</button>
+  <button class="calculator__key calculator__key--enter" value="=" onclick="calculate()">=</button>
+</div>
+</div>
+</div>
+<script>
+  function Result(value) {
+        document.getElementById('result').value +=value;
+    }
+
+    function calculate() {
+        var result = eval(document.getElementById('result').value);
+        document.getElementById('result').value =result;
+    }
+
+    function clearResult() {
+        document.getElementById('result').value = '';
+    }
+</script>
+</body>
+</html> 
